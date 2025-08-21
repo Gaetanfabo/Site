@@ -1,0 +1,108 @@
+/* Reset général */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f7f9;
+  color: #333;
+}
+
+/* En-tête de page */
+.page-header {
+  background: linear-gradient(to right,  #4a8dae, #00334d);
+  color: white;
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.page-header h1 {
+  margin-bottom: 10px;
+  font-size: 2.2rem;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Grille des laptops */
+.laptops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 50px 40px;
+}
+
+/* Carte produit */
+.laptop-card {
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.laptop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Image du laptop */
+.laptop-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Titre et description */
+.laptop-card h2 {
+  color: #00334d;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.laptop-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Lien bouton */
+.laptop-card a {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #00334d;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease;
+}
+
+.laptop-card a:hover {
+  background: #005580;
+}
+
+/* Pied de page */
+  footer {
+    width: 100%;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 17px 0;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 40px;
+}
