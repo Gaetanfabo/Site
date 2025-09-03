@@ -1,17 +1,3 @@
-/* Reset général */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f7fa;
-  color: #333;
-  line-height: 1.6;
-}
-
 /* En-tête */
 .page-header {
   background: #00334d;
@@ -95,21 +81,4 @@ body {
 
 .ordinateur-item a:hover {
   background: #005580;
-}
-
-
-footer {
-  width: 100%;
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 17px 0;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
-  font-size: 1.1rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-top: 40px;
 }

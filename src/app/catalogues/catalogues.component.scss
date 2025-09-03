@@ -88,39 +88,3 @@
         }
     }
 }
-
-// Responsive adjustments
-@media (max-width: 700px) {
-    .catalogues-container {
-        padding: 1rem 0.2rem;
-
-        h1 {
-            font-size: 2rem;
-        }
-        .catalogue-list {
-            gap: 1rem;
-        }
-        .catalogue-item {
-            padding: 1rem 0.5rem 1.5rem 0.5rem;
-            img {
-                max-width: 120px;
-                height: 90px;
-            }
-        }
-    }
-}
-footer {
-    width: 100%;
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 17px 0;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    font-size: 1.1rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-top: 40px;
-}
