@@ -1,115 +1,32 @@
-/* Reset général */
+/* You can add global styles to this file, and also import other style files */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+    font-family: 'Times New Roman', Times, serif;
+  }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f7fa;
-  color: #333;
-  line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  $bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// typographie fluide
+h1 { font-size: clamp(1.5rem, 2.5vw, 2.25rem); }
+p  { font-size: clamp(0.95rem, 1.4vw, 1.05rem); }
+
+// grilles responsive
+.grid {
+  display: grid; gap: 1rem;
+  grid-template-columns: 1fr;
+  @media (min-width: $bp-md) { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: $bp-lg) { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* En-tête */
-.page-header {
-  background: #00334d;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-}
+// utilitaires
+.hide-sm { @media (max-width: $bp-sm){ display:none !important; } }
+.full-bleed { margin-inline: calc(50% - 50vw); width: 100vw; }
 
-.page-header h1 {
-  font-size: 2.4rem;
-  margin-bottom: 15px;
-}
-
-.page-header p {
-  font-size: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
-  opacity: 0.9;
-}
-
-/* Liste des ordinateurs */
-.ordinateurs-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 50px 40px;
-}
-
-/* Carte individuelle */
-.ordinateur-item {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.ordinateur-item:hover {
-  transform: translateY(-5px);
-}
-
-.ordinateur-item h2 {
-  color: #00334d;
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-}
-
-.ordinateur-item img {
-  width: 100%;
-  max-width: 200px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-}
-
-.ordinateur-item p {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.ordinateur-item ul {
-  text-align: left;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding-left: 20px;
-  color: #555;
-}
-
-.ordinateur-item a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  background: #00334d;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  transition: background 0.3s;
-}
-
-.ordinateur-item a:hover {
-  background: #005580;
-}
-
-
-footer {
-  width: 100%;
-  background: #222;
-  color: #fff;
-  text-align: center;
-  padding: 17px 0;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: 1;
-  font-size: 1.1rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-top: 40px;
-}
+.card { background: #fff; border-radius: 12px; padding: 1rem; box-shadow: 0 6px 20px rgba(0,0,0,.06); }
+   
