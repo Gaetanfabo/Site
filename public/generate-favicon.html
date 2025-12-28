@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Favicon</title>
+</head>
+<body>
+    <h2>Favicon Generator - Lettre S</h2>
+    <canvas id="canvas" width="512" height="512"></canvas>
+    <br>
+    <button onclick="downloadPNG()">Télécharger PNG</button>
+    <p>Utilisez ce PNG pour créer un favicon.ico sur <a href="https://favicon.io/favicon-converter/" target="_blank">favicon.io</a></p>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Background gradient
+        const gradient = ctx.createLinearGradient(0, 0, 512, 512);
+        gradient.addColorStop(0, '#3498db');
+        gradient.addColorStop(1, '#2874a6');
+
+        // Draw background with rounded corners
+        ctx.fillStyle = gradient;
+        roundRect(ctx, 0, 0, 512, 512, 100);
+        ctx.fill();
+
+        // Draw letter S
+        ctx.fillStyle = 'white';
+        ctx.font = 'bold 400px Inter, Arial, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('S', 256, 280);
+
+        function roundRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+        }
+
+        function downloadPNG() {
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.download = 'favicon.png';
+                link.href = url;
+                link.click();
+            });
+        }
+    </script>
+</body>
+</html>
