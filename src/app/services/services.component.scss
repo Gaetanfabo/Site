@@ -1,73 +1,66 @@
-.page-header {
-  background: linear-gradient(to right, #4a8dae, #00334d);
-  color: #fff;
-  text-align: center;
-  padding: 60px 20px 40px;
-}
+/* Base styles for .page-header are defined globally in src/styles.scss. */
 
-.page-header h1 {
-  margin-bottom: 10px;
-  font-size: 2.6rem;
-}
-
-.page-header p {
-  font-size: 1.2rem;
-}
-
-/* Grille responsive des services */
 .services-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  padding: 80px 40px;
+  gap: 1.75rem;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 4vw, 2.5rem);
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
-/* Style de base commun à toutes les cartes */
 .service-card {
-  background-color: white;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 10px 15px rgba(17, 1, 1, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+  border: 1px solid var(--c-line);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 44px rgba(30, 111, 255, 0.14);
+    border-color: rgba(30, 111, 255, 0.28);
+
+    .service-image img {
+      transform: scale(1.06);
+    }
+  }
 }
 
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
-
-.service-card img {
+.service-image {
   width: 100%;
-  height: 150px;
-  object-fit: cover;
+  height: 180px;
+  overflow: hidden;
+  background: #f1f5f9;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
 }
 
-.service-card h2 {
-  margin: 20px 15px 10px;
-  font-size: 1.4rem;
-  color: #006699;
-}
+.service-body {
+  padding: 1.5rem 1.5rem 1.75rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 
-.service-card p {
-  margin: 0 15px 20px;
-  font-size: 1rem;
-  color: #555;
-}
+  h2 {
+    font-size: 1.2rem;
+    color: var(--c-ink);
+    margin: 0 0 0.6rem;
+    font-weight: 600;
+  }
 
-/* Style spécifique pour création de site web */
-.service-card.web h2 {
-  color: #0073e6;
-}
-
-.service-card.web:hover {
-  background-color: #f0f8ff;
-}
-
-/* Style spécifique pour sécurité informatique */
-.service-card.security h2 {
-  color: #008060;
-}
-
-.service-card.security:hover {
-  background-color: #eef8f6;
+  p {
+    color: var(--c-ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+  }
 }
